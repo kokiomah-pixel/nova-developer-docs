@@ -1,15 +1,17 @@
-
 # Coordination-Safe Guidance
 
-Sharpe Nova OS provides regime classification and advisory context.
+**Document Version:** v1.0  
+**Applies to:** Nova Constitution v1.x
 
-Nova is designed to improve decision awareness while avoiding coordination effects that may destabilize markets.
+Sharpe Nova OS provides regime classification and advisory context for capital systems.
+
+Nova is designed to improve decision awareness while avoiding coordinated behavior that may destabilize markets.
 
 ---
 
 # The Coordination Problem
 
-If many systems react identically to a signal, market behavior can become unstable.
+If many systems react identically to a signal, markets can become unstable.
 
 Examples include:
 
@@ -23,7 +25,7 @@ Nova is intentionally designed to **avoid triggering coordinated actions**.
 
 # Recommended Integrator Behavior
 
-Developers integrating Nova should prefer **gradual adjustments** rather than abrupt system responses.
+Integrators should prefer gradual adjustments rather than abrupt responses.
 
 Examples of coordination-safe behavior:
 
@@ -32,19 +34,20 @@ Examples of coordination-safe behavior:
 - scale down leverage
 - pause new risk gradually
 
-These approaches preserve market stability.
+These behaviors preserve systemic stability.
 
 ---
 
 # Behaviors to Avoid
 
-Integrators should avoid designs that produce cliff-edge reactions such as:
+Systems integrating Nova should avoid:
 
-- instant liquidation triggers
-- synchronized liquidity withdrawal
 - automatic full-portfolio exits
+- synchronized liquidity withdrawals
+- hard liquidation triggers
+- cliff-edge capital responses
 
-Such behavior can amplify market instability.
+These behaviors can amplify market instability.
 
 ---
 
@@ -52,13 +55,11 @@ Such behavior can amplify market instability.
 
 Nova works best when used inside systems that adapt gradually.
 
-Example patterns:
+Examples include:
 
 - dynamic exposure scaling
 - staged liquidity deployment
 - progressive risk reduction
-
-These approaches align with Nova’s design philosophy.
 
 ---
 
@@ -70,7 +71,7 @@ Where possible, Nova signals should be combined with:
 - governance processes
 - system-level safeguards
 
-Human oversight reduces the risk of unintended coordination.
+Human oversight reduces the risk of unintended coordination effects.
 
 ---
 
@@ -86,5 +87,12 @@ Nova does **not exist to coordinate market behavior**.
 
 ---
 
+## Related Documents
+
+- [Developer Responsibilities](developer-responsibilities.md)
+- [Methodology & Change Control](methodology-change-control.md)
+
+---
+
 Sharpe Nova OS  
-Decision-context infrastructure for autonomous capital 
+Decision-context infrastructure for autonomous capital systems
