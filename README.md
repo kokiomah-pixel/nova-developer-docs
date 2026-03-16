@@ -1,131 +1,76 @@
+# Nova Developer Documentation
 
-}
-# Nova Developer Responsibilities
+Sharpe Nova OS is decision-context infrastructure for autonomous capital systems.
 
-This document defines the responsibilities and expectations for developers, agents, protocols, and institutions integrating Sharpe Nova OS.
+Nova provides regime classification, advisory guardrails, and historical intelligence to help agents, protocols, and institutions make safer capital decisions.
 
-Sharpe Nova OS provides **decision context infrastructure** for capital systems.
-
-Nova does **not** execute capital actions.
-
-Integrators remain fully responsible for all downstream capital decisions.
+Nova does not execute trades, control capital allocation, or override downstream systems.
 
 ---
 
-# Nova Guarantees
+# Design Philosophy
 
-Nova guarantees the following properties.
+Nova is built on four principles:
 
-## Deterministic Regime Classification
+- Query the past
+- Classify the present
+- Support decisions
+- Never control capital
 
-Nova produces a canonical regime state for each epoch.
-
-Example regimes include:
-
-- Stable  
-- Elevated Fragility  
-- Stress  
-
-Once finalized, regime classifications for an epoch are **immutable**.
+Nova is decision-support infrastructure, not execution infrastructure.
 
 ---
 
-## Advisory Guardrails
+# Documentation
 
-Nova may provide advisory guardrails describing market conditions.
+Core Nova governance documents:
 
-Guardrails:
+- [Developer Responsibilities](developer-responsibilities.md)  
+  Defines what Nova guarantees and what integrators must manage themselves.
 
-- are informational signals  
-- provide contextual risk guidance  
-- do not enforce execution constraints  
+- [Methodology & Change Control](methodology-change-control.md)  
+  Explains versioning, epoch immutability, and how Nova evolves safely over time.
 
-Nova never blocks or forces capital actions.
-
----
-
-## Historical Intelligence
-
-Nova exposes historical regime and transition information.
-
-This information represents **encoded historical consequences**, not predictive forecasts.
-
-Historical information may be used for:
-
-- research  
-- system design  
-- risk modeling  
-- simulations  
+- [Coordination-Safe Guidance](coordination-safe-guidance.md)  
+  Best practices for using Nova signals without creating coordinated market behavior.
 
 ---
 
-## Verifiability
+# Intended Audience
 
-Nova responses may include:
+These documents are written for:
 
-- signatures  
-- hashes  
-- optional onchain anchors  
-
-These allow integrators to verify that regime outputs are authentic and untampered.
-
----
-
-# What Nova Does Not Do
-
-Nova explicitly does **not**:
-
-- execute trades  
-- rebalance portfolios  
-- control treasury allocations  
-- block transactions  
-- enforce strategy decisions  
-
-Nova is a **decision-support system only**.
-
-Execution systems remain external to Nova.
+- agent developers
+- protocol builders
+- treasury operators
+- allocators
+- institutional integrators
 
 ---
 
-# Integrator Responsibilities
+# Status
 
-Developers integrating Nova must:
+Nova is currently in early ecosystem deployment.
 
-- treat Nova outputs as advisory signals  
-- maintain independent risk management systems  
-- avoid automatic execution based solely on Nova signals  
-- implement monitoring and safeguards  
+Agent starter repositories are available for:
 
-Nova should be used as one component of a broader decision process.
+- trading agents
+- treasury governance agents
+- portfolio risk agents
 
----
-
-# Risk Disclaimer
-
-Nova does not provide investment advice.
-
-Nova signals should not be interpreted as instructions to:
-
-- buy assets  
-- sell assets  
-- deploy liquidity  
-- withdraw capital  
-
-All capital decisions remain the responsibility of the integrating system or operator.
+Base anchoring and verification layers are forthcoming.
 
 ---
 
-# Responsible Use
+# Links
 
-Integrators are encouraged to design systems that:
+Agent examples:
 
-- scale risk gradually  
-- reduce exposure under stress  
-- avoid abrupt market reactions  
-
-Nova is designed to improve **decision awareness**, not to coordinate market behavior.
+- nova-agent-starter
+- nova-treasury-risk-agent
+- nova-portfolio-risk-agent
 
 ---
 
 Sharpe Nova OS  
-Decision-context infrastructure for autonomous capital system
+Decision-context infrastructure for autonomous capital systems
