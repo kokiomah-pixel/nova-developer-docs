@@ -1,11 +1,13 @@
-
 # Nova Developer Responsibilities
+
+**Document Version:** v1.0  
+**Applies to:** Nova Constitution v1.x
 
 This document defines the responsibilities and expectations for developers, agents, protocols, and institutions integrating Sharpe Nova OS.
 
-Sharpe Nova OS provides **decision context infrastructure** for capital systems.
+Sharpe Nova OS provides decision-context infrastructure for capital systems.
 
-Nova does **not** execute capital actions.
+Nova does not execute capital actions.
 
 Integrators remain fully responsible for all downstream capital decisions.
 
@@ -21,9 +23,9 @@ Nova produces a canonical regime state for each epoch.
 
 Example regimes include:
 
-- Stable  
-- Elevated Fragility  
-- Stress  
+- Stable
+- Elevated Fragility
+- Stress
 
 Once finalized, regime classifications for an epoch are **immutable**.
 
@@ -35,9 +37,9 @@ Nova may provide advisory guardrails describing market conditions.
 
 Guardrails:
 
-- are informational signals  
-- provide contextual risk guidance  
-- do not enforce execution constraints  
+- are informational signals
+- provide contextual risk guidance
+- do not enforce execution constraints
 
 Nova never blocks or forces capital actions.
 
@@ -51,10 +53,10 @@ This information represents **encoded historical consequences**, not predictive 
 
 Historical information may be used for:
 
-- research  
-- system design  
-- risk modeling  
-- simulations  
+- research
+- system design
+- risk modeling
+- simulations
 
 ---
 
@@ -62,11 +64,11 @@ Historical information may be used for:
 
 Nova responses may include:
 
-- signatures  
-- hashes  
-- optional onchain anchors  
+- signatures
+- hashes
+- optional onchain anchors
 
-These allow integrators to verify that regime outputs are authentic and untampered.
+These allow integrators to verify that regime outputs are authentic.
 
 ---
 
@@ -74,11 +76,11 @@ These allow integrators to verify that regime outputs are authentic and untamper
 
 Nova explicitly does **not**:
 
-- execute trades  
-- rebalance portfolios  
-- control treasury allocations  
-- block transactions  
-- enforce strategy decisions  
+- execute trades
+- rebalance portfolios
+- control treasury allocations
+- block transactions
+- enforce strategy decisions
 
 Nova is a **decision-support system only**.
 
@@ -90,10 +92,10 @@ Execution systems remain external to Nova.
 
 Developers integrating Nova must:
 
-- treat Nova outputs as advisory signals  
-- maintain independent risk management systems  
-- avoid automatic execution based solely on Nova signals  
-- implement monitoring and safeguards  
+- treat Nova outputs as advisory signals
+- maintain independent risk management systems
+- avoid automatic execution based solely on Nova signals
+- implement monitoring and safeguards
 
 Nova should be used as one component of a broader decision process.
 
@@ -105,10 +107,10 @@ Nova does not provide investment advice.
 
 Nova signals should not be interpreted as instructions to:
 
-- buy assets  
-- sell assets  
-- deploy liquidity  
-- withdraw capital  
+- buy assets
+- sell assets
+- deploy liquidity
+- withdraw capital
 
 All capital decisions remain the responsibility of the integrating system or operator.
 
@@ -118,13 +120,20 @@ All capital decisions remain the responsibility of the integrating system or ope
 
 Integrators are encouraged to design systems that:
 
-- scale risk gradually  
-- reduce exposure under stress  
-- avoid abrupt market reactions  
+- scale risk gradually
+- reduce exposure under stress
+- avoid abrupt market reactions
 
 Nova is designed to improve **decision awareness**, not to coordinate market behavior.
 
 ---
 
+## Related Documents
+
+- [Methodology & Change Control](methodology-change-control.md)
+- [Coordination-Safe Guidance](coordination-safe-guidance.md)
+
+---
+
 Sharpe Nova OS  
-Decision-context infrastructure for autonomous capital system
+Decision-context infrastructure for autonomous capital systems
