@@ -1,4 +1,4 @@
-}
+
 # Nova Developer Responsibilities
 
 This document defines the responsibilities and expectations for developers, agents, protocols, and institutions integrating Sharpe Nova OS.
