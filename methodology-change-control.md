@@ -1,10 +1,11 @@
 # Nova Methodology & Change Control
 
-This document defines how Sharpe Nova OS evolves while preserving system stability, reproducibility, and integrator trust.
+This document defines the governance framework under which Sharpe Nova OS evolves.
 
-Sharpe Nova OS is designed to behave as **durable decision-context infrastructure** for autonomous capital systems.
+Sharpe Nova OS is designed to function as **durable decision-context infrastructure for capital systems**.  
+As such, methodological stability, reproducibility, and transparent change management are core design priorities.
 
-Methodology changes must be predictable, transparent, and non-disruptive to systems that depend on Nova.
+This document explains how Nova methodology may evolve without disrupting systems that depend on Nova outputs.
 
 ---
 
@@ -14,42 +15,42 @@ Methodology changes must be predictable, transparent, and non-disruptive to syst
 
 Nova operates on discrete time intervals called **epochs**.
 
-Each epoch produces a finalized regime classification that describes the current capital environment.
+Each epoch produces a finalized regime classification representing the systemic capital environment at that time.
 
-An epoch typically includes:
+Each epoch record includes:
 
 - timestamp
 - regime classification
 - constitution version
-- verification signature
+- verification metadata
 
 Once finalized, epoch outputs are **immutable**.
 
-Historical epochs must never be modified.
+Historical epochs are never modified.
 
 This immutability ensures:
 
-- auditability
 - reproducibility
-- stable downstream integrations
+- auditability
+- deterministic historical analysis
 
 ---
 
 ## Regime Taxonomy
 
-Nova classifies market environments using a structured regime taxonomy.
+Nova represents the capital environment through a structured regime taxonomy.
 
 Example regimes include:
 
-- Stable  
-- Elevated Fragility  
-- Stress  
+- **Stable**  
+- **Elevated Fragility**  
+- **Stress**
 
-The taxonomy provides a simplified representation of systemic risk conditions affecting capital deployment.
+These regimes describe **systemic market conditions**, not forecasts.
 
-Regime classifications represent **environmental context**, not predictions.
+They encode environmental risk context derived from historical consequence patterns and market fragility signals.
 
-They are intended to inform decision posture rather than forecast outcomes.
+Regime classifications are intended to inform **capital posture decisions**, not predict price movements.
 
 ---
 
@@ -57,13 +58,14 @@ They are intended to inform decision posture rather than forecast outcomes.
 
 Nova operates under a defined **constitution version**.
 
-The constitution version specifies the methodology used to produce regime classifications.
+The constitution version identifies the methodology used to produce regime classifications.
 
-This includes:
+The constitution defines:
 
 - regime definitions
-- classification rules
-- signal interpretation boundaries
-- telemetry weighting assumptions
+- signal weighting logic
+- classification thresholds
+- telemetry interpretation rules
+- fragility detection logic
 
 Example:
