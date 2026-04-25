@@ -1,139 +1,38 @@
 # Nova Developer Responsibilities
 
-**Document Version:** v1.0  
-**Applies to:** Nova Constitution v1.x
+This document defines the responsibilities of developers, agents, protocols, and institutions integrating Sharpe Nova OS.
 
-This document defines the responsibilities and expectations for developers, agents, protocols, and institutions integrating Sharpe Nova OS.
+Sharpe Nova OS is a pre-execution decision discipline layer.
 
-Sharpe Nova OS provides decision-context infrastructure for capital systems.
+## Integrator Responsibilities
 
-Nova does not execute capital actions.
+All integrators must:
 
-Integrators remain fully responsible for all downstream capital decisions.
+- call Nova before any capital-moving action
+- bind execution behavior to `decision_status`
+- apply `CONSTRAIN` outcomes before execution
+- refuse execution on `DENY`, `DELAY`, `HALT`, and `VETO`
+- retain `decision_id` for governed actions
+- retrieve proof when audit, verification, or governance review is required
 
----
+## Non-Bypass Duty
 
-# Nova Guarantees
+Integrators must not:
 
-Nova guarantees the following properties.
+- treat Nova output as non-binding
+- override refusal states with internal heuristics
+- retry decisions to force `ALLOW`
+- execute without decision admission
 
-## Deterministic Regime Classification
+## Fail-Closed Duty
 
-Nova produces a canonical regime state for each epoch.
-
-Example regimes include:
-
-- Stable
-- Elevated Fragility
-- Stress
-
-Once finalized, regime classifications for an epoch are **immutable**.
-
----
-
-## Advisory Guardrails
-
-Nova may provide advisory guardrails describing market conditions.
-
-Guardrails:
-
-- are informational signals
-- provide contextual risk guidance
-- do not enforce execution constraints
-
-Nova never blocks or forces capital actions.
-
----
-
-## Historical Intelligence
-
-Nova exposes historical regime and transition information.
-
-This information represents **encoded historical consequences**, not predictive forecasts.
-
-Historical information may be used for:
-
-- research
-- system design
-- risk modeling
-- simulations
-
----
-
-## Verifiability
-
-Nova responses may include:
-
-- signatures
-- hashes
-- optional onchain anchors
-
-These allow integrators to verify that regime outputs are authentic.
-
----
-
-# What Nova Does Not Do
-
-Nova explicitly does **not**:
-
-- execute trades
-- rebalance portfolios
-- control treasury allocations
-- block transactions
-- enforce strategy decisions
-
-Nova is a **decision-support system only**.
-
-Execution systems remain external to Nova.
-
----
-
-# Integrator Responsibilities
-
-Developers integrating Nova must:
-
-- treat Nova outputs as advisory signals
-- maintain independent risk management systems
-- avoid automatic execution based solely on Nova signals
-- implement monitoring and safeguards
-
-Nova should be used as one component of a broader decision process.
-
----
-
-# Risk Disclaimer
-
-Nova does not provide investment advice.
-
-Nova signals should not be interpreted as instructions to:
-
-- buy assets
-- sell assets
-- deploy liquidity
-- withdraw capital
-
-All capital decisions remain the responsibility of the integrating system or operator.
-
----
-
-# Responsible Use
-
-Integrators are encouraged to design systems that:
-
-- scale risk gradually
-- reduce exposure under stress
-- avoid abrupt market reactions
-
-Nova is designed to improve **decision awareness**, not to coordinate market behavior.
-
----
+If Nova is unavailable, execution must not proceed.
 
 ## Related Documents
 
 - [Methodology & Change Control](methodology-change-control.md)
-- [Coordination-Safe Guidance](coordination-safe-guidance.md)
-
----
+- [Coordination-Safe Enforcement](coordination-safe-enforcement.md)
+- [Non-Bypass Policy](docs/non_bypass_policy.md)
 
 Sharpe Nova OS  
-Decision-context infrastructure for autonomous capital systems
+Developer integration doctrine for pre-execution decision admission

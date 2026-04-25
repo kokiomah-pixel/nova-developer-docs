@@ -1,76 +1,94 @@
-# Nova Developer Documentation
+# Sharpe Nova OS — Developer Integration Doctrine
 
-Sharpe Nova OS is decision-context infrastructure for autonomous capital systems.
+## Repository Role
 
-Nova provides regime classification, advisory guardrails, and historical intelligence to help agents, protocols, and institutions make safer capital decisions.
+This repository provides developer doctrine and integration guidance for Sharpe Nova OS.
 
-Nova does not execute trades, control capital allocation, or override downstream systems.
+The canonical system, API, proof layer, and runtime live in:
 
----
+-> https://github.com/kokiomah-pixel/sharpe-nova-os
 
-# Design Philosophy
+This repository defines:
 
-Nova is built on four principles:
+- how Nova must be integrated
+- how decision admission must be enforced
+- how non-bypass behavior is maintained
+- how proof must be retrieved and used
 
-- Query the past
-- Classify the present
-- Support decisions
-- Never control capital
+This repository does NOT implement Nova.
 
-Nova is decision-support infrastructure, not execution infrastructure.
+It defines how Nova is used correctly.
 
----
+Sharpe Nova OS is a pre-execution decision discipline layer that conditions and verifies whether capital is allowed to move before execution.
 
-# Documentation
+## What This Means
 
-Core Nova governance documents:
+Nova does not:
 
-- [Developer Responsibilities](developer-responsibilities.md)  
-  Defines what Nova guarantees and what integrators must manage themselves.
+- generate trades
+- optimize strategies
+- provide advisory guidance
 
-- [Methodology & Change Control](methodology-change-control.md)  
-  Explains versioning, epoch immutability, and how Nova evolves safely over time.
+Nova determines:
 
-- [Coordination-Safe Guidance](coordination-safe-guidance.md)  
-  Best practices for using Nova signals without creating coordinated market behavior.
+> whether a proposed capital action is allowed to proceed.
 
----
+## Integration Model
 
-# Intended Audience
+All capital-moving decisions must follow:
 
-These documents are written for:
+Decision -> Nova -> Execution (only if admitted)
 
-- agent developers
-- protocol builders
-- treasury operators
-- allocators
-- institutional integrators
+Nova returns:
 
----
+- decision_status (authoritative)
+- constraint_effect
+- intervention_type
+- reproducibility_hash
 
-# Status
+## Decision Authority
 
-Nova is currently in early ecosystem deployment.
+decision_status is binding:
 
-Agent starter repositories are available for:
+- ALLOW -> proceed
+- CONSTRAIN -> adjust before execution
+- DENY / DELAY / HALT / VETO -> do not execute
 
-- trading agents
-- treasury governance agents
-- portfolio risk agents
+## Non-Bypass Rule
 
-Base anchoring and verification layers are forthcoming.
+Nova must be called before execution.
 
----
+- No internal reasoning is considered permission
+- No retries around denial states
+- No execution without admission
 
-# Links
+## Proof Requirement
 
-Agent examples:
+All governed decisions produce:
 
-- nova-agent-starter
-- nova-treasury-risk-agent
-- nova-portfolio-risk-agent
+- decision_id
+- decision_status
+- constraint_effect
+- reproducibility_hash
 
----
+Proof must be retrievable via `/v1/proof/{decision_id}`
 
-Sharpe Nova OS  
-Decision-context infrastructure for autonomous capital systems
+## Repository Purpose
+
+This repo defines:
+
+- correct integration patterns
+- continuous decision loops
+- agent enforcement rules
+- workplace agent governance
+- MCP tool usage
+
+This repo does NOT:
+
+- host Nova runtime
+- modify Nova behavior
+- provide execution systems
+
+## Canonical System
+
+https://github.com/kokiomah-pixel/sharpe-nova-os
