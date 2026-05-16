@@ -2,30 +2,30 @@
 
 This document defines coordination-safe enforcement behavior for systems that integrate Sharpe Nova OS.
 
-Sharpe Nova OS is a pre-execution decision discipline layer.
+Sharpe Nova OS is a pre-execution environmental governance layer that emits derivative telemetry to help integrators condition their orchestration posture.
 
 ## Coordination Risk
 
 Improper downstream behavior can amplify instability when multiple systems ignore admission discipline or react without governed enforcement.
 
-## Required Enforcement Posture
+## Integrator Guidance
 
-Integrators must:
+Integrators are advised to:
 
-- call Nova before execution
-- enforce `decision_status` as binding
-- apply `CONSTRAIN` outcomes exactly as returned
-- block execution on `DENY`, `DELAY`, `HALT`, and `VETO`
-- preserve proof-backed records for governed actions
+- call Nova upstream of execution to receive admissibility metadata and coordination context
+- treat `decision_status` as derivative telemetry for consumer interpretation and local governance
+- translate `CONSTRAIN` outcomes into consumer-specific pacing/adjustments
+- treat `DENY`, `DELAY`, `HALT`, and `VETO` as indicators of elevated constraint pressure that should prompt escalation or increased review rather than being treated as a remote execution permit
+- preserve proof-backed records for governed actions and correlate telemetry with consumer decisions
 
 ## Prohibited Behavior
 
-Integrators must not:
+Integrators should not:
 
-- bypass Nova for speed or convenience
+- bypass Nova for speed or convenience without assessing telemetry and risk
 - treat internal reasoning as permission
-- synchronize around denial-state retries
-- execute before admission
+- synchronize around denial-state retries without higher-fidelity checks
+- execute before applying appropriate local admission conditioning
 
 ## Related Documents
 
@@ -34,4 +34,4 @@ Integrators must not:
 - [Continuous Decision Loop](docs/continuous_decision_loop.md)
 
 Sharpe Nova OS  
-Binding enforcement doctrine for coordinated capital systems
+Guidance for coordination-safe integration and consumer-responsibility enforcement patterns.
