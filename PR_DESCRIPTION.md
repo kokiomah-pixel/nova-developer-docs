@@ -1,6 +1,6 @@
 # PR: docs(doctrine): environmental governance doctrine alignment
 
-This pull request contains a docs-first, non-breaking doctrine alignment pass that reframes Sharpe Nova OS across developer documentation as environmental governance infrastructure and derivative telemetry infrastructure. The PR includes prose-only changes and audit artifacts that document every meaningful edit for Chief Coherence Officer review.
+This pull request contains a docs-first, non-breaking doctrine alignment pass that reframes Sharpe Nova OS across developer documentation as environmental governance infrastructure and derivative telemetry infrastructure; preserve schema and runtime (branch doctrine-alignment-2026-05-16)
 
 ## Executive Summary
 
@@ -73,6 +73,25 @@ Does the repository now consistently teach Sharpe Nova OS as environmental gover
 
 (Answer this question in your review.)
 
---
+---
 
-All changes are on branch `doctrine-alignment-2026-05-16`. No PR is opened yet; this file is the PR description draft. Update it as needed before creating the PR.
+## Repository Note
+
+This file mirrors the active PR description for: `docs(doctrine): environmental governance doctrine alignment`
+
+It exists to preserve a versioned copy of the doctrine alignment summary, audit framing, and governance review context inside the repository itself.
+
+---
+
+Post-Adjustment Recommendation
+
+After implementing this correction:
+
+- keep PR open for governance/compliance review
+- do NOT merge immediately
+- wait for:
+    - Methodology/Governance signoff
+    - Compliance/Ops review
+    - Jarvis-Nova Chief Coherence Officer review
+
+Then finalize merge after institutional signoff is complete.
