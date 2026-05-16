@@ -1,18 +1,15 @@
 # Non-Bypass Policy
 
-Nova is a required pre-execution checkpoint.
+Nova is an upstream environmental conditioning checkpoint that emits derivative telemetry.
 
 ## Rules
 
-- Nova must be called before any capital-moving action
-- decision_status is authoritative
-- DENY / DELAY / HALT / VETO cannot be bypassed
-- CONSTRAIN must be applied before execution
-- No retries to force ALLOW outcomes
-- No execution without Nova admission
+- Integrators should call Nova upstream of capital-moving actions to receive admissibility metadata
+- `decision_status` is derivative telemetry intended for consumer interpretation and local governance
+- DENY / DELAY / HALT / VETO indicate elevated constraint pressure and should be handled via increased review, escalation, or local safeguards rather than treated as a sovereign ban
+- CONSTRAIN should be translated into consumer-specific adjustments before considering execution
+- Avoid retry strategies that attempt to bypass constraint signals; prefer adaptive pacing or human review
 
-## Fail-Closed Behavior
+## Fail-Closed Guidance
 
-If Nova is unavailable:
-
--> execution must NOT proceed
+When Nova is unavailable, many operators choose a fail-closed posture; consumers must design failover and availability policies appropriate to their governance and risk tolerance.

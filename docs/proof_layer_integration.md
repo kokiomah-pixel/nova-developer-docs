@@ -1,6 +1,6 @@
 # Proof Layer Integration
 
-Every Nova decision produces a proof record.
+Every Nova emission produces a proof record of the derived telemetry.
 
 ## Required Fields
 
@@ -15,4 +15,4 @@ Every Nova decision produces a proof record.
 - verification
 - governance tracking
 
-Proof must be retrieved after decision execution.
+Proof should be retrieved and correlated with consumer actions for audit and reproducibility; retrieval is part of consumer audit workflows and does not itself convey execution authority.
