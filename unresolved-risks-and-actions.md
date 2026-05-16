@@ -1,4 +1,4 @@
-Unresolved Risks and Actions — doctrine-alignment-2026-05-16
+Unresolved Risks and Actions - doctrine-alignment-2026-05-16
 
 1) Flagged code-like examples and operational runbooks (do NOT auto-change):
 

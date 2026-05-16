@@ -25,7 +25,7 @@ Integrators should not:
 
 ## Fail-Closed Guidance
 
-When Nova is unavailable, consumers must design failover and availability policies appropriate to their governance and risk tolerance. Some operators choose a fail-closed posture; others implement compensating controls. Document your chosen posture and ensure it aligns with organizational risk policies.
+When Nova is unavailable, consumers must design failover and availability policies appropriate to their governance and risk tolerance. Some operators choose a fail-closed posture; others implement...
 
 ## Related Documents
 

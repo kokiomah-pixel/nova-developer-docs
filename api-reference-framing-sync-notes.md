@@ -1,4 +1,4 @@
-API Reference Framing Sync Notes — doctrine-alignment-2026-05-16
+API Reference Framing Sync Notes - doctrine-alignment-2026-05-16
 
 Plan:
 - Update endpoint descriptions to remove language implying execution authority and replace with phrases such as:

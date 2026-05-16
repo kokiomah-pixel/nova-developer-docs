@@ -1,4 +1,4 @@
-Semantic Change Log — doctrine-alignment-2026-05-16
+Semantic Change Log - doctrine-alignment-2026-05-16
 
 1) file/path: docs/openai_workspace_agents.md
    original language:
@@ -10,7 +10,7 @@ Semantic Change Log — doctrine-alignment-2026-05-16
    - "Nova emits admissibility telemetry describing environmental context for proposed actions."
    - "Agent -> Decision Proposal -> Nova (environmental context) -> Consumer orchestration & execution (consumer remains responsible for decisions)"
    - "decision_status is derivative telemetry that consumers should interpret according to local governance."
-   - "Example consumer interpretations (non-normative): ALLOW indicates lower constraint pressure — a consumer may choose to proceed after applying local safeguards; CONSTRAIN suggests local adjustments or pacing; DENY / DELAY / HALT / VETO signal elevated constraint pressure and should trigger stricter review or escalation rather than be treated as a sovereign fiat."
+   - "Example consumer interpretations (non-normative): ALLOW indicates lower constraint pressure - a consumer may choose to proceed after applying local safeguards; CONSTRAIN suggests local adjustments or pacing; DENY / DELAY / HALT / VETO signal elevated constraint pressure and should trigger stricter review or escalation rather than be treated as a sovereign fiat."
    rationale:
    - Remove prescriptive gating language; reframe Nova as telemetry emitter.
    doctrine alignment objective:
@@ -107,7 +107,7 @@ Semantic Change Log — doctrine-alignment-2026-05-16
    original language:
    - "Primary (Authoritative) ... Primary fields define execution behavior."
    updated language:
-   - "Primary (Telemetry) ... Primary fields provide derivative telemetry and admissibility metadata for consumer interpretation; they inform consumer execution posture but do not themselves confer execution authority."
+   - "Primary (Telemetry) ... Primary fields provide derivative telemetry and admissibility metadata for consumer interpretation; they inform consumer execution posture but do not themselves conf..."
    rationale:
    - Remove wording that frames fields as authoritative executors.
    doctrine alignment objective:
@@ -124,7 +124,7 @@ Semantic Change Log — doctrine-alignment-2026-05-16
    original language:
    - "All capital actions must call nova_context before execution."
    updated language:
-   - "Integrators are encouraged to call `nova_context` upstream of capital actions to receive environmental context and admissibility metadata; consumers should design policies that determine when Nova telemetry is required according to local governance and risk tolerance."
+   - "Integrators are encouraged to call `nova_context` upstream of capital actions to receive environmental context and admissibility metadata; consumers should design policies that determine wh..."
    rationale:
    - Change imperative to guidance.
    doctrine alignment objective:
@@ -139,9 +139,9 @@ Semantic Change Log — doctrine-alignment-2026-05-16
 
 8) file/path: developer-responsibilities.md
    original language:
-   - "All integrators must: - call Nova before any capital-moving action - bind execution behavior to `decision_status` - refuse execution on `DENY`, `DELAY`, `HALT`, and `VETO` - If Nova is unavailable, execution must not proceed."
+   - "All integrators must: - call Nova before any capital-moving action - bind execution behavior to `decision_status` - refuse execution on `DENY`, `DELAY`, `HALT`, and `VETO` - If Nova is unav..."
    updated language:
-   - "Recommended integrator responsibilities: - call Nova upstream of capital-moving actions to receive admissibility metadata - interpret `decision_status` as derivative telemetry and incorporate it into local enforcement and safeguards - treat `DENY`, `DELAY`, `HALT`, and `VETO` as indicators of elevated constraint pressure and escalate or increase review according to local governance - When Nova is unavailable, consumers must design failover/availability policies appropriate to local risk tolerance (some operators adopt a fail-closed posture)."
+   - "Recommended integrator responsibilities: - call Nova upstream of capital-moving actions to receive admissibility metadata - interpret `decision_status` as derivative telemetry and incorpora..."
    rationale:
    - Replace prescriptive language with consumer-responsibility guidance.
    doctrine alignment objective:
@@ -155,4 +155,4 @@ Semantic Change Log — doctrine-alignment-2026-05-16
    risk level: HIGH
 
 
-All changes are prose-only and preserve schema keys, endpoints, runtime behavior, and SDK compatibility. Any code-like examples detected were left unchanged and recorded in unresolved-risks-and-actions.md for manual review.
+All changes are prose-only and preserve schema keys, endpoints, runtime behavior, and SDK compatibility. Any code-like examples detected were left unchanged and recorded in unresolved-risks-and-a...

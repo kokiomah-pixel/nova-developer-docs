@@ -1,4 +1,4 @@
-Terminology Migration Summary — doctrine-alignment-2026-05-16
+Terminology Migration Summary - doctrine-alignment-2026-05-16
 
 Preferred terms (canonical):
 - environmental governance

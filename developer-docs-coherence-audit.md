@@ -1,16 +1,16 @@
-Developer Docs Coherence Audit — doctrine-alignment-2026-05-16
+Developer Docs Coherence Audit - doctrine-alignment-2026-05-16
 
 Checklist (post Phase A+B)
 
 - Landing/Intro: updated (README)
-- Continuous Decision Loop: reframed (docs/continuous_decision_loop.md) — DONE
-- Quickstarts/onboarding: TODO — full scan scheduled
-- API reference phrasing: TODO — plan created in api-reference-framing-sync-notes.md
-- Examples & payloads: TODO — scan for code-like gating examples (flagged)
-- Integration Philosophy: added (docs/integration-philosophy.md) — DONE
-- Sovereignty Boundaries: added (docs/sovereignty-boundaries.md) — DONE
-- Glossary: added (docs/glossary.md) — DONE
-- FAQ: added (docs/faq.md) — DONE
+- Continuous Decision Loop: reframed (docs/continuous_decision_loop.md) - DONE
+- Quickstarts/onboarding: TODO - full scan scheduled
+- API reference phrasing: TODO - plan created in api-reference-framing-sync-notes.md
+- Examples & payloads: TODO - scan for code-like gating examples (flagged)
+- Integration Philosophy: added (docs/integration-philosophy.md) - DONE
+- Sovereignty Boundaries: added (docs/sovereignty-boundaries.md) - DONE
+- Glossary: added (docs/glossary.md) - DONE
+- FAQ: added (docs/faq.md) - DONE
 
 Applied Phase A+B edits (prose-only):
 - docs/continuous_decision_loop.md
