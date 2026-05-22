@@ -89,6 +89,19 @@ This repo does NOT:
 - modify Nova behavior
 - provide execution systems
 
+## Developer Environment Integrity
+
+Sharpe Nova OS treats developer environments as part of the infrastructure trust boundary.
+Contributors should:
+
+- use minimal, trusted editor extensions
+- keep secrets out of repositories and chats
+- keep `.env` files untracked
+- rotate credentials after suspicious extension or tooling activity
+- run doctrine/security lint in the canonical system repo before opening PRs
+
+See [docs/security/developer-environment-integrity-protocol.md](docs/security/developer-environment-integrity-protocol.md).
+
 ## Canonical System
 
 https://github.com/kokiomah-pixel/sharpe-nova-os
