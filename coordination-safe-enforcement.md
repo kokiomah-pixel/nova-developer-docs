@@ -1,31 +1,37 @@
-# Coordination-Safe Enforcement
+# Coordination-Safe Review
 
-This document defines coordination-safe enforcement behavior for systems that integrate Sharpe Nova OS.
+> Status: Superseded terminology notice.
+>
+> This file previously used enforcement-oriented language. The current Sharpe Nova OS doctrine treats Nova as a non-authority pre-execution governance review layer.
+>
+> Nova conditions the environment before execution; it does not authorize execution.
+>
+> Nova does not enforce, authorize, approve, reject, route, settle, or execute actions.
 
-Sharpe Nova OS is a pre-execution decision discipline layer.
+This document is retained for developer-orientation continuity only.
 
 ## Coordination Risk
 
-Improper downstream behavior can amplify instability when multiple systems ignore admission discipline or react without governed enforcement.
+Improper downstream behavior can amplify instability when multiple systems treat review context as an execution command or compress local policy into Nova output.
 
-## Required Enforcement Posture
+## Coordination-Safe Review Pattern
 
-Integrators must:
+Nova supports coordination-safe review by emitting pre-action context before local execution authority is exercised.
 
-- call Nova before execution
-- enforce `decision_status` as binding
-- apply `CONSTRAIN` outcomes exactly as returned
-- block execution on `DENY`, `DELAY`, `HALT`, and `VETO`
-- preserve proof-backed records for governed actions
+The review pattern is:
 
-## Prohibited Behavior
+```text
+agentic workflow forms intended action
+-> Nova emits pre-action governance context
+-> local system reviews authority scope, constraint posture, source context, and replay evidence
+-> local system decides whether to continue, delay, escalate, or stop under its own policy
+```
 
-Integrators must not:
+Nova does not make the execution decision.
 
-- bypass Nova for speed or convenience
-- treat internal reasoning as permission
-- synchronize around denial-state retries
-- execute before admission
+Nova makes the decision environment reviewable.
+
+`decision_status` is a non-authority governance status. It summarizes Nova's view of the pre-action decision environment. Local systems retain execution authority and define their own escalation, delay, continuation, rejection, or fail-closed behavior.
 
 ## Related Documents
 
@@ -34,4 +40,4 @@ Integrators must not:
 - [Continuous Decision Loop](docs/continuous_decision_loop.md)
 
 Sharpe Nova OS  
-Binding enforcement doctrine for coordinated capital systems
+Coordination-safe review orientation for coordinated capital systems

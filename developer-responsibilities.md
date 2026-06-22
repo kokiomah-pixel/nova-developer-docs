@@ -1,38 +1,47 @@
 # Nova Developer Responsibilities
 
-This document defines the responsibilities of developers, agents, protocols, and institutions integrating Sharpe Nova OS.
+This document is retained for developer orientation only. Canonical doctrine lives in the main `sharpe-nova-os` repository.
 
-Sharpe Nova OS is a pre-execution decision discipline layer.
+Nova conditions the environment before execution; it does not authorize execution.
+
+Developers integrating Sharpe Nova OS should request Nova-conditioned pre-action context before local execution authority is exercised in high-stakes agentic financial workflows.
+
+Nova does not authorize or execute actions. Local systems retain authority and must define their own policies for escalation, delay, rejection, continuation, or fail-closed behavior.
 
 ## Integrator Responsibilities
 
-All integrators must:
+Developer responsibilities include:
 
-- call Nova before any capital-moving action
-- bind execution behavior to `decision_status`
-- apply `CONSTRAIN` outcomes before execution
-- refuse execution on `DENY`, `DELAY`, `HALT`, and `VETO`
-- retain `decision_id` for governed actions
-- retrieve proof when audit, verification, or governance review is required
+1. Request Nova-conditioned pre-action context before local authority acts.
+2. Preserve the returned context for review and replay.
+3. Treat `decision_status` as a non-authority governance status, not an execution command.
+4. Maintain local policy for whether to continue, delay, escalate, or stop.
+5. Preserve source segmentation and replay artifacts when available.
+6. Avoid using Nova as a callable utility detached from the pre-execution review boundary.
 
-## Non-Bypass Duty
+`decision_status` is a non-authority governance status. It summarizes Nova's view of the pre-action decision environment. Local systems retain execution authority and define their own escalation, delay, continuation, rejection, or fail-closed behavior.
 
-Integrators must not:
+## Integration Warning
 
-- treat Nova output as non-binding
-- override refusal states with internal heuristics
-- retry decisions to force `ALLOW`
-- execute without decision admission
+Do not reduce Nova to a utility function.
 
-## Fail-Closed Duty
+The superseded integration pattern is:
 
-If Nova is unavailable, execution must not proceed.
+```text
+call Nova -> execute if allowed
+```
+
+The current integration pattern is:
+
+```text
+intended action -> Nova-conditioned pre-action context -> local governance review -> local execution decision
+```
 
 ## Related Documents
 
 - [Methodology & Change Control](methodology-change-control.md)
-- [Coordination-Safe Enforcement](coordination-safe-enforcement.md)
+- [Coordination-Safe Review](coordination-safe-enforcement.md)
 - [Non-Bypass Policy](docs/non_bypass_policy.md)
 
 Sharpe Nova OS  
-Developer integration doctrine for pre-execution decision admission
+Developer orientation for non-authority pre-execution governance review

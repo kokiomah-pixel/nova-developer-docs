@@ -4,7 +4,7 @@ Status: Required
 
 Sharpe Nova OS treats developer environments as part of the infrastructure trust boundary. This documentation repository carries the governance posture that supports the canonical system repository.
 
-This protocol protects environmental integrity without exposing sovereign internals. It does not disclose Reflex Memory internals, policy weights, admission causality, internal thresholds, settlement secrets, private keys, wallet secrets, or facilitator credentials.
+This protocol protects environmental integrity without exposing sovereign internals. It does not disclose Reflex Memory internals, policy weights, internal causality, internal thresholds, settlement secrets, private keys, wallet secrets, or facilitator credentials.
 
 ## 1. Developer Tooling Risk
 

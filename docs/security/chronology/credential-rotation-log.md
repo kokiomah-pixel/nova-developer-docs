@@ -2,7 +2,7 @@
 
 Purpose: preserve credential rotation chronology without exposing credential material.
 
-Record credential class and scope only. Do not record raw tokens, private keys, wallet secrets, full auth headers, bearer credentials, seed phrases, signatures, settlement material, facilitator credentials, Reflex Memory internals, policy weights, admission causality, or internal thresholds.
+Record credential class and scope only. Do not record raw tokens, private keys, wallet secrets, full auth headers, bearer credentials, seed phrases, signatures, settlement material, facilitator credentials, Reflex Memory internals, policy weights, internal causality, or internal thresholds.
 
 | Date | Event Type | Affected Surface | Action Taken | Remaining Risk | Follow-Up Owner / Status |
 | --- | --- | --- | --- | --- | --- |
